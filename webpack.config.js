@@ -17,14 +17,11 @@ module.exports = {
 			},
 			{
 				test: /\.js$/,
-				loader: 'babel-loader',
-				query: {
-			        presets: ['es2015']
-			    }
+				loader: 'babel-loader'
 			},
 			{
 				test: /\.(png|jpg)$/,
-				loader: 'url-loader?limit=8192'
+				loader: 'url-loader?limit=8192&name=resource/images/[hash:8].[name].[ext]'
 			}
 		]
 	},
