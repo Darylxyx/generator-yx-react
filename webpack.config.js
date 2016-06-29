@@ -26,6 +26,6 @@ module.exports = {
 		]
 	},
 	plugins: [
-		new ExtractTextPlugin('bundle.css', {allChunks: true})
+		new ExtractTextPlugin('bundle.css')
 	]
 }
