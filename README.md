@@ -6,7 +6,7 @@ Later,will try to use Gulp or NodeJs extend this.
 
 ```
 npm install
-npm server
+npm start
 open loaclhost:3000/webpack-dev-server/app
 ```
 
