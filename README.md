@@ -6,7 +6,7 @@ Later,will try to use Gulp or NodeJs extend this.
 
 ```
 npm install
-webpack-dev-server 
+npm server
 open loaclhost:8080/webpack-dev-server/app
 ```
 
@@ -17,5 +17,3 @@ Your changes will appear without refresh the browser.
 * webpack
 * webpack-dev-server
 * babel-loader
-* react
-* react-hot-loader
