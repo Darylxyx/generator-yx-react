@@ -1,5 +1,5 @@
 # Generator yx
-Basic configuration has been completed base on Webpack.
+Basic configuration has been completed base on Webpack.  
 Later,will try to use Gulp or NodeJs extend this.
 
 ### Usage
