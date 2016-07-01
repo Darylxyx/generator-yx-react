@@ -7,7 +7,7 @@ Later,will try to use Gulp or NodeJs extend this.
 ```
 npm install
 npm server
-open loaclhost:8080/webpack-dev-server/app
+open loaclhost:3000/webpack-dev-server/app
 ```
 
 Now edit 'index.js'.  
