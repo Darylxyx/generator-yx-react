@@ -11,7 +11,6 @@ html, body {
 .container {
 	width: 250px;
 	height: 200px;
-	background-color: #f7f7f7;
 	border-radius: 12px;
 	box-shadow: 0 1px 5px rgba(0,0,0,0.2);
 	position: absolute;
@@ -21,6 +20,10 @@ html, body {
 	margin-left: -100px;
 	text-align: center;
 	line-height: 200px;
-	color: rgba(0,0,0,0.7);
+	color: #fff;
 	font-size: 16px;
+	background-image: url(./resource/images/bg.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
 }

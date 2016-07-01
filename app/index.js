@@ -1,2 +1,3 @@
 import './style.css';
-// document.write('Hello World');
+const word = 'Hello World';
+console.log(word);
