@@ -10,4 +10,4 @@ open loaclhost:8080/webpack-dev-server/app
 ```
 
 Now edit 'index.js'.
-your changes will appear without refresh browser.
+Your changes will appear without refresh the browser.
