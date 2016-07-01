@@ -1,6 +1,5 @@
 # generator-yx
-==============
-已完成基本配置基于webpack的构建工具。
+Basic configuration has been completed base on Webpack.
 
 ### Usage
 
