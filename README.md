@@ -10,7 +10,7 @@ npm server
 open loaclhost:3000/webpack-dev-server/app
 ```
 
-Now edit 'index.js'.  
+Now edit 'app/index.js' & 'app/style.css'.  
 Your changes will appear without refresh the browser.
 
 ### Dependencies
