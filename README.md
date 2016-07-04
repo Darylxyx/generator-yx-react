@@ -17,3 +17,4 @@ Your changes will appear without refresh the browser.
 * webpack
 * webpack-dev-server
 * babel-loader
+* react
