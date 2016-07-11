@@ -19,6 +19,8 @@ Your changes will appear without refresh the browser.
 webpack --watch
 webpack -p
 ```
+Command `--watch` will repackaging the project when you changes.  
+Command `-p` will compression the bundle.
 
 ### Dependencies
 * webpack
