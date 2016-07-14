@@ -20,8 +20,11 @@ config.on('data', (data) => {
 
 	// console.log(publicPath);
 
+	if (publicPath.substr(0,1) !== '/') {
+		return;
+	}
+
 	var pathReg = new RegExp(publicPath, 'g');
-	// console.log(pathReg);
 
 	inHtml.on('data', (data0) => {
 		outHtml.write(data0.toString().replace(pathReg, './'));
@@ -34,6 +37,5 @@ config.on('data', (data) => {
 		if (err) {
 			console.log(err);
 		}
-	})
-
+	});
 });
