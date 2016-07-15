@@ -18,9 +18,11 @@ Your changes will appear without refresh the browser.
 ```
 webpack --watch
 webpack -p
+node parsePath.js
 ```
 Command `--watch` will repack the project when you change.  
 Command `-p` will compress the bundle.
+It will copy a HTML file into bundle folder and change all of path in files which is begin with `\` when you run `parsePath.js`.so,you can runnig the bundle folder in static or any server.
 
 ### Dependencies
 * webpack
