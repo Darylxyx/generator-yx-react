@@ -3,8 +3,6 @@ var fs = require('fs');
 var config = fs.createReadStream('./webpack.config.js'),
 	inHtml = fs.createReadStream('./app/index.html'),
 	outHtml = fs.createWriteStream('./bundle/index.html');
-	// inCSS = fs.createReadStream('./bundle/bundle.css'),
-	// outCSS = fs.createWriteStream('./bundle/bundle1.css');
 
 config.on('data', (data) => {
 
@@ -17,8 +15,6 @@ config.on('data', (data) => {
 		return dataStr;
 
 	})();
-
-	// console.log(publicPath);
 
 	if (publicPath.substr(0,1) !== '/') {
 		return;
@@ -34,6 +30,15 @@ config.on('data', (data) => {
 	cssData = cssData.replace(pathReg, './');
 	
 	fs.writeFile('./bundle/bundle.css', cssData, (err) => {
+		if (err) {
+			console.log(err);
+		}
+	});
+
+	var jsData = fs.readFileSync('./bundle/bundle.js', 'utf8');
+	jsData = jsData.replace(pathReg, './');
+
+	fs.writeFile('./bundle/bundle.js', jsData, (err) => {
 		if (err) {
 			console.log(err);
 		}
