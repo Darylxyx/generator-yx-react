@@ -1,8 +1,6 @@
 var fs = require('fs');
 
-var config = fs.createReadStream('./webpack.config.js'),
-	inHtml = fs.createReadStream('./app/index.html'),
-	outHtml = fs.createWriteStream('./bundle/index.html');
+var config = fs.createReadStream('./webpack.config.js');
 
 config.on('data', (data) => {
 
@@ -22,25 +20,37 @@ config.on('data', (data) => {
 
 	var pathReg = new RegExp(publicPath, 'g');
 
-	inHtml.on('data', (data0) => {
-		outHtml.write(data0.toString().replace(pathReg, './'));
-	});
-
-	var cssData = fs.readFileSync('./bundle/bundle.css', 'utf8');
-	cssData = cssData.replace(pathReg, './');
-	
-	fs.writeFile('./bundle/bundle.css', cssData, (err) => {
-		if (err) {
-			console.log(err);
+	fs.readFile('./index.html', 'utf8', (err, data) => {
+		if (!err) {
+			data = data.toString().replace(pathReg, './dist/');
+			fs.writeFile('./index.html', data.toString(), (err) => {
+				if (!err) {
+					console.log('HTML file path change successed');
+				}
+			});
 		}
 	});
 
-	var jsData = fs.readFileSync('./bundle/bundle.js', 'utf8');
-	jsData = jsData.replace(pathReg, './');
-
-	fs.writeFile('./bundle/bundle.js', jsData, (err) => {
-		if (err) {
-			console.log(err);
+	fs.readFile('./dist/bundle.css', 'utf8', (err, data) => {
+		if (!err) {
+			data = data.toString().replace(pathReg, './');
+			fs.writeFile('./dist/bundle.css', data.toString(), (err) => {
+				if (!err) {
+					console.log('CSS bundle path change successed');
+				}
+			});
 		}
 	});
+
+	fs.readFile('./dist/bundle.js', 'utf8', (err, data) => {
+		if (!err) {
+			data = data.toString().replace(pathReg, '../src/');
+			fs.writeFile('./dist/bundle.js', data.toString(), (err) => {
+				if (!err) {
+					console.log('JavaScript bundle path change successed');
+				}
+			});
+		}
+	});
+
 });

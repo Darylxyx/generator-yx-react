@@ -21,7 +21,7 @@ module.exports = {
 			},
 			{
 				test: /\.(png|jpg)$/,
-				loader: 'url-loader?limit=8192&name=resource/images/[hash:8].[name].[ext]'
+				loader: 'url-loader?limit=8192&name=images/[hash:8].[name].[ext]'
 			}
 		]
 	},
