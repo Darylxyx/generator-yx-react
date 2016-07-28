@@ -1,6 +1,6 @@
 # Generator yx
-Basic configuration has been completed base on Webpack.  
-Later,will try to use Gulp or NodeJs extend this.
+Basic configuration has been completed base on Webpack and use NodeJS extended.
+Later,will try to use Gulp and something extend this.
 
 ### Usage
 
