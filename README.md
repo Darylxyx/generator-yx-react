@@ -10,7 +10,7 @@ npm start
 open loaclhost:3000
 ```
 
-Now edit `app/index.js` & `app/style.css`.  
+Now edit `src/index.js` & `src/main.css`.  
 Your changes will appear without refresh the browser.
 
 ### Packing
