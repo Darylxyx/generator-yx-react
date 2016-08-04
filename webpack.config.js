@@ -25,6 +25,12 @@ module.exports = {
 		]
 	},
 	plugins: [
-		new ExtractTextPlugin('bundle.css', {allChunks: true})
+		new ExtractTextPlugin('bundle.css', {allChunks: true}),
+		new webpack.DefinePlugin({
+			'process.env': {
+				'NODE_ENV': JSON.stringify('development'), //development & production
+				'PUBLIC_PATH': JSON.stringify('http://127.0.0.1')
+			}
+		})
 	]
 }
