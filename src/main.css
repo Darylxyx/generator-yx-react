@@ -5,7 +5,7 @@ html, body, div, h1, h2, h3, h4, h5, h6, p, span, img, input {
 
 html, body {
 	font-size: 12px;
-	font-family: '思源黑体简','Helvetica Neue-Light';
+	font-family: '微软雅黑', Arial, Helvetica;
 }
 
 .container {
