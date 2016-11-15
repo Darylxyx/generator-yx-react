@@ -5,7 +5,7 @@ html, body, div, h1, h2, h3, h4, h5, h6, p, span, img, input {
 
 html, body {
 	font-size: 12px;
-	font-family: '\601D\6E90\9ED1\4F53\7B80','Helvetica Neue-Light';
+	font-family: '微软雅黑', Arial, Helvetica;
 }
 
 .container {
@@ -28,7 +28,7 @@ html, body {
 	line-height: 200px;
 	color: #fff;
 	font-size: 16px;
-	background-image: url(images/df1de759.bg.jpg);
+	background-image: url(./images/bg.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
