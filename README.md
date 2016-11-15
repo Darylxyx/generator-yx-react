@@ -22,7 +22,7 @@ node pack.js
 ```
 Command `--watch` will repack the project when you change.  
 Command `-p` will compress the bundle.    
-It will copy a HTML file into dist folder. So, you can directly run the dist folder in static or any server.
+`pack.js` It will copy a HTML file into dist folder. So, you can directly run the dist folder in static or any server.
 
 ### Dependencies
 * webpack
