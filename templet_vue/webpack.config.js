@@ -6,7 +6,6 @@ module.exports = {
 	entry: './src/index.js',
 	output: {
 		path: 'dist',
-		publicPath: 'http://cdn-address',
 		filename: 'bundle.js'
 	},
 	module: {
