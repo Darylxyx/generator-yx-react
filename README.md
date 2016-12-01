@@ -28,4 +28,4 @@ Command `-p` will compress the bundle.
 * webpack
 * webpack-dev-server
 * babel-loader
-* react
+* nodejs
