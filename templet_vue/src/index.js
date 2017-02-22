@@ -1,10 +1,10 @@
 import './base.css';
 import './main.css';
-import Vue from 'vue/dist/vue.js';
+import Vue from 'vue';
+
+import App from './component/App.vue';
 
 new Vue({
 	el: '#demo',
-	data: {
-		message: 'Hello world'
-	}
+	render: h => h(App)
 })
