@@ -4,7 +4,7 @@ var webpack = require('webpack'),
 module.exports = {
 	entry: './src/index.js',
 	output: {
-		path: 'dist',
+		path: path.join(__dirname, 'dist'),
 		filename: 'bundle.js'
 	},
 	module: {
@@ -14,8 +14,13 @@ module.exports = {
 				loader: 'style-loader!css-loader'
 			},
 			{
-				test: /\.js$/,
-				loader: 'babel-loader'
+				test: /\.js(x)*$/,
+				loader: 'babel-loader',
+				exclude: /node_modules/,
+				query: {
+					presets: ['react', 'es2015', 'stage-0'],
+					plugins: [["antd", { "libraryName": "antd", "style": "css" }]
+				}
 			},
 			{
 				test: /\.(png|jpg)$/,
@@ -24,9 +29,14 @@ module.exports = {
 		]
 	},
 	plugins: [
+		// new webpack.optimize.CommonsChunkPlugin('common.js', ['index']),
+		new webpack.DllReferencePlugin({
+			context: __dirname,
+			manifest: require('./dist/manifest.json')
+		}),
 		new webpack.DefinePlugin({
 			'process.env': {
-				'NODE_ENV': JSON.stringify('production'), //development & production
+				'NODE_ENV': JSON.stringify('development'), //development & production
 				'PUBLIC_PATH': JSON.stringify('http://127.0.0.1')
 			}
 		})
