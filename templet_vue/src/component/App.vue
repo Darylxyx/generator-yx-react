@@ -4,10 +4,13 @@
 
 <script>
 
-export default {
-	data() {
+module.exports = {
+	data () {
+
+		const str = 'Hello Vue';
+
 		return {
-			message: 'Hello Vue'
+			message: str
 		}
 	}
 }

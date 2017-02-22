@@ -18,12 +18,13 @@ module.exports = {
 				loader: 'babel-loader',
 				exclude: /node_modules/,
 				query: {
-					presets: ['react', 'es2015', 'stage-0']
+					presets: ['es2015', 'stage-0']
 				}
 			},
 			{
 				test: /\.vue$/,
                 loader: 'vue-loader',
+                exclude: /node_modules/
 			},
 			{
 				test: /\.(png|jpg)$/,
@@ -32,6 +33,15 @@ module.exports = {
 		]
 	},
 	plugins: [
+		new webpack.LoaderOptionsPlugin({
+        	test: /\.vue$/, 
+        	options: {
+        		babel: {
+			      presets: ['es2015', 'stage-0']
+			      // plugins: ['transform-runtime']
+			    }
+         	}
+       	}),
 		new webpack.DllReferencePlugin({
 			context: __dirname,
 			manifest: require('./dist/manifest.json')
