@@ -1,22 +1,30 @@
 var webpack = require('webpack'),
-	path = require('path'),
-	ExtractTextPlugin = require('extract-text-webpack-plugin');
+	path = require('path');
 
 module.exports = {
-	entry: './src/index.js',
+	entry: {
+		'dll-user': './src/index.js'
+	},
 	output: {
-		path: 'dist',
-		filename: 'bundle.js'
+		path: path.join(__dirname, 'dist'),
+		filename: '[name].bundle.js'
 	},
 	module: {
 		loaders: [
 			{
 				test: /\.css$/,
-				loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
+				loader: 'style-loader!css-loader'
 			},
 			{
-				test: /\.js$/,
-				loader: 'babel-loader'
+				test: /\.js(x)*$/,
+				loader: 'babel-loader',
+				exclude: function(path) {
+					var isNpmModule = !!path.match(/node_modules/);
+					return isNpmModule;
+				},
+				query: {
+					presets: ['react', 'es2015', 'stage-0']
+				}
 			},
 			{
 				test: /\.(png|jpg)$/,
@@ -25,7 +33,11 @@ module.exports = {
 		]
 	},
 	plugins: [
-		new ExtractTextPlugin('bundle.css', {allChunks: true}),
+		// new webpack.optimize.CommonsChunkPlugin('common.js', ['index']),
+		// new webpack.DllReferencePlugin({
+		// 	context: __dirname,
+		// 	manifest: require('./dist/vendor-manifest.json')
+		// }),
 		new webpack.DefinePlugin({
 			'process.env': {
 				'NODE_ENV': JSON.stringify('development'), //development & production

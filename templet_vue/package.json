@@ -32,11 +32,12 @@
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "vue-template-compiler": "^2.1.6",
-    "webpack": "^1.13.1",
-    "webpack-dev-server": "^1.14.1"
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.3.0"
   },
   "dependencies": {
     "vue": "^2.1.6",
-    "vue-router": "^2.0.2"
+    "vue-router": "^2.0.2",
+    "vuex": "^2.0.0"
   }
 }

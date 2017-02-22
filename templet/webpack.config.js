@@ -5,7 +5,7 @@ var webpack = require('webpack'),
 module.exports = {
 	entry: './src/index.js',
 	output: {
-		path: 'dist',
+		path: path.join(__dirname, 'dist'),
 		filename: 'bundle.js'
 	},
 	module: {
@@ -16,7 +16,11 @@ module.exports = {
 			},
 			{
 				test: /\.js$/,
-				loader: 'babel-loader'
+				loader: 'babel-loader',
+				exclude: /node_modules/,
+				query: {
+					presets: ['react', 'es2015', 'stage-0']
+				}
 			},
 			{
 				test: /\.(png|jpg)$/,
