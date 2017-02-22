@@ -6,6 +6,7 @@ Later,will try to use Gulp and something extend this.
 
 ```
 npm install
+webpack --config webpack.dll.config.js -p
 npm start
 open loaclhost:3000
 ```
