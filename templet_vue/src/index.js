@@ -1,3 +1,4 @@
+import './base.css';
 import './main.css';
 import Vue from 'vue/dist/vue.js';
 
