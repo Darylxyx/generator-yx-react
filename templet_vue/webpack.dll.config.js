@@ -3,9 +3,9 @@ var path = require("path"),
   webpack = require("webpack");
 
 var vendors = [
-  'Vue', 
-  'Vue-router', 
-  'Vuex'
+  'vue', 
+  'vue-router', 
+  'vuex'
 ];
 
 fs.readFile('./index.html', 'utf8', (err, data) => {
