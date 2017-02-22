@@ -1,34 +1,41 @@
-const path = require('path');
-const webpack = require('webpack');
+var path = require("path"),
+  fs = require('fs'),
+  webpack = require("webpack");
+
+var vendors = [
+  'Vue', 
+  'Vue-router', 
+  'Vuex'
+];
+
+fs.readFile('./index.html', 'utf8', (err, data) => {
+  if (!err) {
+    var dataStr = data.toString();
+    dataStr = dataStr.replace('<!-- dll -->', '<script src="./dist/Dll.js"></script>');
+    fs.writeFile('./index.html', dataStr, (err) => {
+      if (!err) {
+        console.log('Insert dll_tag successfully')
+      } else {
+        console.log(err);
+      }
+    });
+  }
+});
 
 module.exports = {
   entry: {
-    vendor: ['Vue', 'Vuex']
+    vendor: vendors
   },
   output: {
-    path: 'dist',
-    filename: '[name].dll.js',
-    /**
-     * output.library
-     * 将会定义为 window.${output.library}
-     * 在这次的例子中，将会定义为`window.vendor_library`
-     */
-    library: '[name]_library'
+    path: path.join(__dirname, "dist"),
+    filename: "Dll.js",
+    library: "[name]_[hash]"
   },
   plugins: [
     new webpack.DllPlugin({
-      /**
-       * path
-       * 定义 manifest 文件生成的位置
-       * [name]的部分由entry的名字替换
-       */
-      path: 'manifest.json',
-      /**
-       * name
-       * dll bundle 输出到那个全局变量上
-       * 和 output.library 一样即可。 
-       */
-      name: '[name]_library'
+      path: path.join(__dirname, "dist", "manifest.json"),
+      name: "[name]_[hash]",
+      context: __dirname
     })
   ]
 };
