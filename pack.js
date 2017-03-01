@@ -6,9 +6,8 @@ fs.readFile('./index.html', 'utf8', (err, data) => {
 		timestamp = (new Date()).getTime();
 	
 		dataStr = dataStr
-					.replace('bundle.js', 'bundle.js?v=' + timestamp)
-					.replace('<!-- dll -->', '<script src="./dist/Dll.js"></script>')
-					.replace('./dist/Dll.js', './Dll.js?v=' + timestamp);
+					.replace('bundle.js', 'bundle.js?v='+timestamp)
+					.replace('./dist/Dll.js', './Dll.js?v='+ timestamp);
 
 		fs.writeFile('./dist/index.html', dataStr, (error) => {
 			if (!error) {
