@@ -19,7 +19,7 @@ module.exports = {
 				exclude: /node_modules/,
 				query: {
 					presets: ['react', 'es2015', 'stage-0'],
-					plugins: [["antd", { "libraryName": "antd", "style": "css" }]
+					plugins: [["antd", { "libraryName": "antd", "style": "css" }]]
 				}
 			},
 			{
