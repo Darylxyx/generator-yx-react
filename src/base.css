@@ -3,17 +3,17 @@ html, body, div, h1, h2, h3, h4, h5, h6, p, span, img, input, textarea, ul, ol, 
 	padding: 0;
 }
 
-html, body {
-	font-size: 12px;
-	font-family: '微软雅黑', Arial, Helvetica;
-}
-
 ul, ol {
 	list-style-type: none;
 }
 
 a {
 	text-decoration: none;
+}
+
+hr {
+	border: none;
+	outline: none;
 }
 
 .l {
@@ -48,16 +48,44 @@ a {
 	font-size: 15px;
 }
 
+.f-16 {
+	font-size: 16px;
+}
+
 .f-18 {
 	font-size: 18px;
+}
+
+.f-20 {
+	font-size: 20px;
 }
 
 .f-bold {
 	font-weight: bold;
 }
 
+.f-bolder {
+	font-weight: bolder;
+}
+
 .c-white {
 	color: #fff;
+}
+
+.c-black {
+	color: #000;
+}
+
+.c-cc {
+	color: #ccc;
+}
+
+.c-c9 {
+	color: #c9c9c9;
+}
+
+.lh-100 {
+	line-height: 100%;
 }
 
 .lh-130 {
@@ -78,6 +106,14 @@ a {
 
 .lh-200 {
 	line-height: 200%;
+}
+
+.inline {
+	display: inline;
+}
+
+.block {
+	display: block;
 }
 
 .inline-block {
@@ -113,4 +149,33 @@ a {
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
+}
+
+.text-indent {
+	text-indent: 2em;
+}
+
+.text-wrap {
+	word-wrap: break-word;
+	word-break: normal;
+}
+
+.absolute {
+	position: absolute;
+}
+
+.relative {
+	position: relative;
+}
+
+.cusor {
+	cursor: pointer;
+}
+
+.hidden {
+	display: none;
+}
+
+.opacity {
+	opacity: 0;
 }
